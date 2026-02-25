@@ -30,6 +30,7 @@ class LotteryDisplay extends HTMLElement {
                         align-items: center;
                         font-size: 20px;
                         font-weight: bold;
+                        color: #333;
                     }
                 </style>
                 <div class="lotto-numbers">
@@ -61,6 +62,10 @@ customElements.define('lottery-display', LotteryDisplay);
 document.getElementById('generator-btn').addEventListener('click', () => {
     const lotteryDisplay = document.querySelector('lottery-display');
     lotteryDisplay.render(generateLottoNumbers());
+});
+
+document.getElementById('theme-toggle-btn').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
 });
 
 function generateLottoNumbers() {
